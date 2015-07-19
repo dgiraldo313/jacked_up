@@ -1,0 +1,9 @@
+<table>
+	<% @users.each do |user| %>
+	<tr>
+		
+		<td><%= user.workouts.all.count%></td>
+		<td><%= user.age %></td>
+	</tr>
+	<% end %>
+</table>

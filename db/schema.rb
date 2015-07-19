@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150718035952) do
+ActiveRecord::Schema.define(version: 20150719210513) do
 
   create_table "card_decks", force: :cascade do |t|
     t.integer  "workout_id", limit: 4
@@ -46,6 +46,10 @@ ActiveRecord::Schema.define(version: 20150718035952) do
     t.integer  "user_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "spades",     limit: 255
+    t.string   "hearts",     limit: 255
+    t.string   "clubs",      limit: 255
+    t.string   "diamonds",   limit: 255
   end
 
 end
