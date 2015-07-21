@@ -1,0 +1,34 @@
+
+
+
+  <% if @workout.errors.any? %>
+    <div>
+      <h2><%= pluralize(@workout.errors.count, "error") %> prohibited this workouts from being saved:</h2>
+
+      <ul>
+      <% @workout.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div >
+    <%= f.label :spades %><br>
+    <%= f.text_field :spades %>
+  </div>
+  <div >
+    <%= f.label :hearts %><br>
+    <%= f.text_field :hearts %>
+  </div>
+  <div >
+    <%= f.label :clubs %><br>
+    <%= f.text_field :clubs %>
+  </div>
+  <div >
+    <%= f.label :diamonds %><br>
+    <%= f.text_field :diamonds %>
+  </div>
+  <div >
+    <%= f.submit %>
+  </div>

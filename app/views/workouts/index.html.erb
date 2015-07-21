@@ -1,7 +1,18 @@
-<table>
+<table >
 	<% @workouts.each do |workout| %>
 	<tr>
-		<td><%= workout.user_id %></td>
+	<!-- 	<td><%= link_to workout.id, user_workouts_path(workout) %></td> -->
+		<td><strong>User Id:</strong><%= workout.user_id %></td>
+		<td><strong>Spades:</strong><%= workout.spades %></td>
+		<td><strong>Clubs:</strong><%= workout.clubs %></td>
+		<td><strong>Hearts:</strong><%= workout.hearts %></td>
+		<td><strong>Diamonds:</strong><%= workout.diamonds %></td>
+		<td><%= link_to "Show", user_workout_path(@user, workout) %></td>
+		<td><%= link_to "Edit", edit_user_workout_path(@user, workout) %></td>
+		<td><%= link_to "Delete", user_workout_path(@user, workout), method: :delete, data: { confirm: "Are you sure?" }%></a></td>
+
 	</tr>
 	<% end %>
 </table>
+
+<h1><%= link_to "New Workout", new_user_workout_path %>

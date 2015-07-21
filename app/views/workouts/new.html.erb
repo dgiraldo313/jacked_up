@@ -1,0 +1,6 @@
+<h1> New Workout </h1>
+
+<%=  form_for @workout, url: user_workouts_path, html: { method: :post } do |f| %>
+  <%= render 'form', f: f %>
+
+<% end %>

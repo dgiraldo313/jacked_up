@@ -2,8 +2,14 @@
 	<% @users.each do |user| %>
 	<tr>
 		
-		<td><%= user.workouts.all.count%></td>
+		<td><%= user.name%></td>
 		<td><%= user.age %></td>
+		<td><%= link_to "Show", user_workouts_path(user) %></td>
+		<td><%= link_to "Edit", edit_user_path(user) %></td>
+		<td><%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure?" }%></a></td>
 	</tr>
 	<% end %>
 </table>
+
+
+<h1><%= link_to "New User", new_user_path %>
