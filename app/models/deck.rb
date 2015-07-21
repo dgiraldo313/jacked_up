@@ -24,4 +24,8 @@ class Deck
 		@cards.length
 	end
 
+	def cards
+		@cards
+	end
+
 end

@@ -1,0 +1,15 @@
+<table >
+	<% @histories.each do |history| %>
+	<tr>
+
+		<td><strong>User Id:</strong><%= history.user_id %></td>
+		<td><strong>Id:</strong><%= history.id %></td>
+		<td><%= link_to "Show", user_history_path(@user, history) %></td>
+		<td><%= link_to "Edit", edit_user_history_path(@user, history) %></td>
+		<td><%= link_to "Delete", user_history_path(@user, history), method: :delete, data: { confirm: "Are you sure?" }%></a></td>
+
+	</tr>
+	<% end %>
+</table>
+
+<h1><%= link_to "New History", new_user_history_path %>

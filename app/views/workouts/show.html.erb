@@ -8,5 +8,12 @@
 
 	</table>
 
-<%= @Deck1= Deck.new %>
+<% @Deck1= Deck.new %>
+<% @count= 1 %>
+<% @Deck1.cards.each  do |card| %>
+
+<div><%= @count %>) <%= card.suit %>
+<%= card.value %></div>
+<% @count+= 1 %>
+<% end %>
 
