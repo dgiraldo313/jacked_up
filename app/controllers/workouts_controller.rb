@@ -20,31 +20,31 @@ class WorkoutsController < ApplicationController
     	redirect_to user_workouts_path
   	end
 
-  	def edit
-  		@workout = Workout.find(params[:id])
+  def edit
+  	@workout = Workout.find(params[:id])
 
+  end
+
+def update
+	@workout = Workout.find(params[:id])
+	if @workout.update_attributes(workout_params)
+  		flash[:success] = "Saved workout."
+  		redirect_to user_workouts_path
+	else
+  		flash[:error] = "That workout could not be saved."
+  		render action: :edit
+	end
+end
+
+	def destroy
+		@workout = Workout.find(params[:id])
+		if @workout.destroy
+    		flash[:success] = "Todo list item was deleted."
+  	else
+    		flash[:error] = "Todo list item could not be deleted."
   	end
-
-  	def update
-  		@workout = Workout.find(params[:id])
-  		if @workout.update_attributes(workout_params)
-      		flash[:success] = "Saved workout."
-      		redirect_to user_workouts_path(workout)
-    	else
-      		flash[:error] = "That workout could not be saved."
-      		render action: :edit
-    	end
-  	end
-
-  	def destroy
-  		@workout = Workout.find(params[:id])
-  		if @workout.destroy
-      		flash[:success] = "Todo list item was deleted."
-    	else
-      		flash[:error] = "Todo list item could not be deleted."
-    	end
-    	redirect_to user_workouts_path
-    end
+  	redirect_to user_workouts_path
+  end
 
 
     private

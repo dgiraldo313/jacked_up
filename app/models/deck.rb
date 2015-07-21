@@ -8,6 +8,7 @@ class Deck
 			(ranks.size).times do |i|
 				@cards.push(Card.new(ranks[i], suit, (i+1)))
 			end
+		@cards.shuffle!
 		end
 	end
 	
