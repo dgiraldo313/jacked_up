@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require modernizr.custom.79639
+//= require jquery.baraja
+
+

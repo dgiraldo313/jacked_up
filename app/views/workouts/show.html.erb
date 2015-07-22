@@ -10,10 +10,41 @@
 
 <% @Deck1= Deck.new %>
 <% @count= 1 %>
-<% @Deck1.cards.each  do |card| %>
+<div class="baraja-demo">
+	<ul id="baraja-el" class="baraja-container">
+	<% @Deck1.cards.each  do |card| %>
 
-<div><%= @count %>) <%= card.suit %>
-<%= card.value %></div>
-<% @count+= 1 %>
-<% end %>
+		<li id="next"><h4><%= @count %>) <%= card.suit %>
+		<%= card.value %></h4></li>
+		<% @count+= 1 %>
+		<% end %>
+	</ul>
+</div>
+<nav class="actions light">
+	<span id="nav-prev">&lt;</span>
+	<span id="nav-next">&gt;</span>
+</nav>
+
+       
+        <script type="text/javascript">	
+
+        	var $el = $( '#baraja-el' ),
+				baraja = $el.baraja();
+
+				// navigation
+				$( '#nav-prev' ).on( 'click', function( event ) {
+
+					baraja.previous();
+				
+				} );
+
+				$( '.baraja-container' ).on( 'click', function( event ) {
+
+					baraja.next();
+				
+				} );
+
+			
+		</script>
+
 
