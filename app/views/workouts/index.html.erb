@@ -1,18 +1,31 @@
+<div class="container">
 <table >
+	<thead>
+	<tr>
+		<th>Workout Id</th>
+		<th><h1 style="color:red"> &hearts;:</h1></th>
+        <th><h1>&clubs;:</h1></th>
+        <th><h1 style="color:red">&diams;: </h1></th>
+        <th><h1>&spades;:</h1></th>
+        <th></th>
+        </tr>
+    </thead>
 	<% @workouts.each do |workout| %>
 	<tr>
 	<!-- 	<td><%= link_to workout.id, user_workouts_path(workout) %></td> -->
-		<td><strong>User Id:</strong><%= workout.user_id %></td>
-		<td><strong>Spades:</strong><%= workout.spades %></td>
-		<td><strong>Clubs:</strong><%= workout.clubs %></td>
-		<td><strong>Hearts:</strong><%= workout.hearts %></td>
-		<td><strong>Diamonds:</strong><%= workout.diamonds %></td>
-		<td><%= link_to "Show", user_workout_path(@user, workout) %></td>
-		<td><%= link_to "Edit", edit_user_workout_path(@user, workout) %></td>
-		<td><%= link_to "Delete", user_workout_path(@user, workout), method: :delete, data: { confirm: "Are you sure?" }%></a></td>
+		<td><%= workout.user_id %></td>
+		<td><%= workout.spades %></td>
+		<td><%= workout.clubs %></td>
+		<td><%= workout.hearts %></td>
+		<td><%= workout.diamonds %>
+		<td><%= link_to "Show", user_workout_path(@user, workout) %>
+		<%= link_to "Edit", edit_user_workout_path(@user, workout) %>
+		<%= link_to "Delete", user_workout_path(@user, workout), method: :delete, data: { confirm: "Are you sure?" }%></a></td>
 
 	</tr>
 	<% end %>
 </table>
 
-<h1><%= link_to "New Workout", new_user_workout_path %>
+	<h1><%= link_to "New Workout", new_user_workout_path %>
+	</h1>
+</div>

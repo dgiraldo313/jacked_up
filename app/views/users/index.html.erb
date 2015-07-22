@@ -1,12 +1,17 @@
 <table>
+	<thead>
+		<th>User Name</th>
+		<th>Age</th>
+		<th></th>
+	</thead>
 	<% @users.each do |user| %>
 	<tr>
 		
 		<td><%= user.name%></td>
 		<td><%= user.age %></td>
-		<td><%= link_to "Show", user_path(user) %></td>
-		<td><%= link_to "Edit", edit_user_path(user) %></td>
-		<td><%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure?" }%></a></td>
+		<td><%= link_to "Show", user_path(user) %>
+		<%= link_to "Edit", edit_user_path(user) %>
+		<%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Are you sure?" }%></a></td>
 	</tr>
 	<% end %>
 </table>
