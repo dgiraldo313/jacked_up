@@ -1,14 +1,14 @@
-.baraja-demo {
+.baraja-deck {
 	width: 200px;
 	margin: 30px auto;
 	color: #aaa;
 }
 
-.no-js .baraja-demo {
+.no-js .baraja-deck {
 	width: auto;
 }
 
-.baraja-demo h4 {
+.baraja-deck h4 {
 	color: #666;
 	font-size: 14px;
 	padding: 8px 10px 5px;
@@ -16,14 +16,15 @@
 	border-bottom: 1px solid #f0f0f0;
 }
 
-.baraja-demo p {
+.baraja-deck p {
 	font-size: 12px;
 	font-weight: 700;
 	padding: 0 10px;
 	margin: 10px 3px 0;
 }
 
-.baraja-demo ul.baraja-container li {
+.baraja-deck ul.baraja-container li {
+	font-size: 3em;
 	border-radius: 10px;
 	padding: 5px;
 	box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
@@ -34,9 +35,55 @@
 	user-select: none;
 }
 
-.baraja-demo li img {
+/*.baraja-deck li img {
 	display: block;
 	margin: 0 auto;
 	width: 100%;
 	border-radius: 10px 10px 0 0;
-}
+}*/
+
+/*Custom css for card styling*/
+
+	.black-card{
+		color: black;
+	}
+	.red-card{
+		color: red;
+	}
+
+	.value-top, .value-bottom{
+		font-size: .5em
+	}
+
+	.value-bottom{
+  		position: absolute;
+  		bottom: 0px;
+  		right: 5px;
+
+	}
+	.center-items{
+		margin-top: 35%;
+  		text-align: center;
+	}
+
+	.suit{
+		display: inline-block;
+
+	}
+	.number{
+		display: inline-block;
+	}
+
+	.exercise{
+		margin-top: 10px;
+  		font-size: .8em;
+	}
+
+
+
+
+
+
+
+
+

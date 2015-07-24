@@ -1,10 +1,15 @@
+html{
+	background-image: url('/assets/black_pattern_2.jpg');
+	background-repeat: repeat;
+}
+
 table {
     border-collapse: collapse;
     width: 80%;
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
-
+    background-color: white;
 }
 
 table, th,tr, td{
@@ -23,3 +28,18 @@ th{
 h1{
 	text-align: center;
 }
+
+
+.container{
+  width: 100%;
+  position: relative;
+}
+
+.main-content{
+  width: 80%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+

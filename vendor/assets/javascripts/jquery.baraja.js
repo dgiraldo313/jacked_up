@@ -518,6 +518,12 @@ jQuery.fn.reverse = [].reverse;
 			} );
 
 		},
+		// _delete : function() {
+
+		// 	this.getElementsByTagName('li').remove();
+
+		// },
+
 		_allowAction : function() {
 
 			return this.itemsCount > 1;
@@ -593,6 +599,11 @@ jQuery.fn.reverse = [].reverse;
 			this._dispatch( this._add, $elems );
 
 		}
+		// },
+
+		// delete : function( $elems){
+		// 	this._dispatch( this._delete, $elems );
+		// }
 
 	};
 	

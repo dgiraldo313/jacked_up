@@ -1,44 +1,70 @@
 
-<!-- <table>
-	<tr><%= @workout.spades %></tr>
-	<tr><%= @workout.hearts %></tr>
-	<tr><%= @workout.clubs %></tr>
-	<tr><%= @workout.diamonds %></tr>
-
-	</table> -->
-
 <% @Deck1= Deck.new %>
 <% @count= 1 %>
-<div class="baraja-demo">
+<div class="baraja-deck">
 	<ul id="baraja-el" class="baraja-container">
+	<!-- loop that iterate through deck -->
 	<% @Deck1.cards.each  do |card| %>
+		<% suit= card.suit.downcase %>
+		<% value= card.value %>
+		<% number= card.number %>
+		<li id="next">
+		
+			<%if suit == "spades" || suit == "clubs" %>
+				<div class="black-card">
+				<div class= "value-top"><%= value %></div>
+				<div class= "center-items">
+				<div class= "number"><%= number %></div>
+				<% if suit == "spades" %>
+					<div class="suit">&spades;</div>
+					<div class="exercise"><%= @workout.spades %>
+				<% elsif suit == "clubs" %>
+					<div class="suit">&clubs;</div>
+					<div class="exercise"><%= @workout.clubs %>
+				<% end %>
+				</div>
+				</div>
+				<div class= "value-bottom"><%= value %></div>
+				</div>
 
-		<li id="next"><h4><%= @count %>) <%= card.suit %>
-		<%= card.value %></h4></li>
+			<%elsif suit == "hearts" || suit == "diamonds"%>
+				<div class="red-card">
+				<div class= "value-top"><%= value %></div>
+				<div class= "center-items">
+				<div class= "number"><%= number %></div>
+				<% if suit == "hearts" %>
+					<div class="suit">&hearts;</div>
+					<div class="exercise"><%= @workout.hearts %>
+				<% elsif suit == "diamonds" %>
+					<div class="suit">&diams;</div>
+					<div class="exercise"><%= @workout.diamonds %>
+				<% end %>
+				</div>
+				</div>
+				<div class= "value-bottom"><%= value %></div>
+				</div>
+			
+			<% end %>
+		
+		</li>
 		<% @count+= 1 %>
 		<% end %>
+
 	</ul>
 </div>
+
  
-        <script type="text/javascript">	
+  
+ <%= javascript_tag do %>
+    var $el = $( '#baraja-el' ),
+	baraja = $el.baraja();
 
-        	var $el = $( '#baraja-el' ),
-				baraja = $el.baraja();
+		$( '.baraja-container' ).on( 'click', function( event ) {
 
-				// navigation
-				$( '#nav-prev' ).on( 'click', function( event ) {
-
-					baraja.previous();
-				
-				} );
-
-				$( '.baraja-container' ).on( 'click', function( event ) {
-
-					baraja.next();
-				
-				} );
-
+			baraja.next();		
+		} );
 			
-		</script>
+ <% end %>
+
 
 
