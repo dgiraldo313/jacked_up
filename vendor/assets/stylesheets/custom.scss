@@ -1,10 +1,10 @@
 @font-face{ 
 	font-family: 'MyWebFont';
-	src: url('webfont.eot');
-	src: url('webfont.eot?iefix') format('eot'),
-	     url('webfont.woff') format('woff'),
-	     url('webfont.ttf') format('truetype'),
-	     url('webfont.svg#webfont') format('svg');
+	src: url(asset_path('webfont.eot'));
+	src: url(asset_path('webfont.eot?iefix')) format('eot'),
+	     url(asset_path('webfont.woff')) format('woff'),
+	     url(asset_path('webfont.ttf')) format('truetype'),
+	     url(asset_path('webfont.svg#webfont')) format('svg');
 }
 
 
