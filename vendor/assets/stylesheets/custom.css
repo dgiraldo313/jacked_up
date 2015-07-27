@@ -1,3 +1,13 @@
+@font-face{ 
+	font-family: 'MyWebFont';
+	src: url('webfont.eot');
+	src: url('webfont.eot?iefix') format('eot'),
+	     url('webfont.woff') format('woff'),
+	     url('webfont.ttf') format('truetype'),
+	     url('webfont.svg#webfont') format('svg');
+}
+
+
 .baraja-deck {
 	width: 200px;
 	margin: 30px auto;
@@ -24,7 +34,8 @@
 }
 
 .baraja-deck ul.baraja-container li {
-	font-size: 3em;
+	font-family: 'MyWebFont', Arial, sans-serif; 
+	font-size: 2em;
 	border-radius: 10px;
 	padding: 5px;
 	box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
@@ -51,26 +62,28 @@
 		color: red;
 	}
 
-	.value-top, .value-bottom{
-		font-size: .5em
+	.rank-top, .rank-bottom{
+		
 	}
 
-	.value-bottom{
+	.rank-bottom{
   		position: absolute;
   		bottom: 0px;
   		right: 5px;
 
 	}
 	.center-items{
-		margin-top: 35%;
+		margin-top: 10%;
   		text-align: center;
 	}
 
 	.suit{
+		font-size: 2.5em;
 		display: inline-block;
 
 	}
-	.number{
+	.value{
+		font-size: 2em;
 		display: inline-block;
 	}
 

@@ -6,42 +6,42 @@
 	<!-- loop that iterate through deck -->
 	<% @Deck1.cards.each  do |card| %>
 		<% suit= card.suit.downcase %>
+		<% rank= card.rank%>
 		<% value= card.value %>
-		<% number= card.number %>
 		<li id="next">
 		
 			<%if suit == "spades" || suit == "clubs" %>
 				<div class="black-card">
-				<div class= "value-top"><%= value %></div>
+				<div class= "rank-top"><%= rank%></div>
 				<div class= "center-items">
-				<div class= "number"><%= number %></div>
+				<div class= "value"><%= value %></div>
 				<% if suit == "spades" %>
 					<div class="suit">&spades;</div>
-					<div class="exercise"><%= @workout.spades %>
+					<div class="exercise"><%= @workout.spades.upcase%>
 				<% elsif suit == "clubs" %>
 					<div class="suit">&clubs;</div>
-					<div class="exercise"><%= @workout.clubs %>
+					<div class="exercise"><%= @workout.clubs.upcase%>
 				<% end %>
 				</div>
 				</div>
-				<div class= "value-bottom"><%= value %></div>
+				<div class= "rank-bottom"><%= rank%></div>
 				</div>
 
 			<%elsif suit == "hearts" || suit == "diamonds"%>
 				<div class="red-card">
-				<div class= "value-top"><%= value %></div>
+				<div class= "rank-top"><%= rank%></div>
 				<div class= "center-items">
-				<div class= "number"><%= number %></div>
+				<div class= "value"><%= value %></div>
 				<% if suit == "hearts" %>
 					<div class="suit">&hearts;</div>
-					<div class="exercise"><%= @workout.hearts %>
+					<div class="exercise"><%= @workout.hearts.upcase %>
 				<% elsif suit == "diamonds" %>
 					<div class="suit">&diams;</div>
-					<div class="exercise"><%= @workout.diamonds %>
+					<div class="exercise"><%= @workout.diamonds.upcase %>
 				<% end %>
 				</div>
 				</div>
-				<div class= "value-bottom"><%= value %></div>
+				<div class= "rank-bottom"><%= rank%></div>
 				</div>
 			
 			<% end %>

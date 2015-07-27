@@ -1,15 +1,15 @@
 class Card
 
-  attr_accessor :number, :suit, :value
+  attr_accessor :value, :suit, :rank
 
-  def initialize(value, suit, number)
-    @number = number
-    @suit = suit
+  def initialize(rank, suit, value)
     @value = value
+    @suit = suit
+    @rank = rank
   end
  
   def to_s
-    "#{@number} of #{@suit}"
+    "#{@value} of #{@suit}"
   end
 end
 
