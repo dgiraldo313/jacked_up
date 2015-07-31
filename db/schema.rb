@@ -11,22 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719210513) do
-
-  create_table "card_decks", force: :cascade do |t|
-    t.integer  "workout_id", limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
-  create_table "cards", force: :cascade do |t|
-    t.string   "suit",         limit: 255
-    t.string   "value",        limit: 255
-    t.string   "exercise",     limit: 255
-    t.integer  "card_deck_id", limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
+ActiveRecord::Schema.define(version: 20150731040726) do
 
   create_table "histories", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -34,13 +19,18 @@ ActiveRecord::Schema.define(version: 20150719210513) do
     t.datetime "updated_at"
   end
 
+  add_index "histories", ["user_id"], name: "index_histories_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
-    t.integer  "age",        limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "first_name",      limit: 255
+    t.string   "email",           limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "last_name",       limit: 255
+    t.string   "password_digest", limit: 255
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
   create_table "workouts", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -51,5 +41,7 @@ ActiveRecord::Schema.define(version: 20150719210513) do
     t.string   "clubs",      limit: 255
     t.string   "diamonds",   limit: 255
   end
+
+  add_index "workouts", ["user_id"], name: "index_workouts_on_user_id", using: :btree
 
 end
