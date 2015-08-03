@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/login' => "user_sessions#new", as: :login
+  delete "/logout" => "user_sessions#destroy", as: :logout
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,11 +16,15 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :users
+  resources :user_sessions, only: [:new, :create]
+  resources :password_resets, only: [:new, :create, :edit, :update]
+  
+  resources :workouts
+  resources :history
 
-  resources :users do
-    resources :workouts
-    resources :history
-  end
+  root 'workouts#index'
+  
   
 
   # Example resource route with options:

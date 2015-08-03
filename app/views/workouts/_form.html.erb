@@ -1,6 +1,6 @@
 
 
-
+<%= form_for(@workout) do |f| %>
   <% if @workout.errors.any? %>
     <div>
       <h2><%= pluralize(@workout.errors.count, "error") %> prohibited this workouts from being saved:</h2>
@@ -32,3 +32,5 @@
   <div >
     <%= f.submit %>
   </div>
+
+<% end %>

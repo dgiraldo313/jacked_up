@@ -12,20 +12,20 @@
     </thead>
 	<% @workouts.each do |workout| %>
 	<tr>
-	<!-- 	<td><%= link_to workout.id, user_workouts_path(workout) %></td> -->
+	
 		<td><%= workout.user_id %></td>
 		<td><%= workout.spades %></td>
 		<td><%= workout.clubs %></td>
 		<td><%= workout.hearts %></td>
 		<td><%= workout.diamonds %>
-		<td><%= link_to "Show", user_workout_path(@user, workout) %>
-		<%= link_to "Edit", edit_user_workout_path(@user, workout) %>
-		<%= link_to "Delete", user_workout_path(@user, workout), method: :delete, data: { confirm: "Are you sure?" }%></a></td>
+		<td><%= link_to "Show", workout_path(workout) %>
+		<%= link_to "Edit", edit_workout_path(workout) %>
+		<%= link_to "Delete", workout_path(workout), method: :delete, data: { confirm: "Are you sure?" }%></a></td>
 
 	</tr>
 	<% end %>
 </table>
 
-	<h1><%= link_to "New Workout", new_user_workout_path %>
+	<h1><%= link_to "New Workout", new_workout_path %>
 	</h1>
 </div>

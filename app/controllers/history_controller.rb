@@ -1,27 +1,36 @@
 class HistoryController < ApplicationController
+  before_action :require_user
+  before_action :set_history, only: [:show, :edit, :update, :destroy]
 
 	def index
-		# @user= User.find(params[:user_id])
-		@histories= user.histories.all
+		# @current_user= current_user.find(params[:current_user_id])
+		@histories= current_user.histories
 	end
 
 	def show
-    	@history = History.find(params[:id])
+    	# @history = History.find(params[:id])
   	end
 
   	def new
-  		@history = History.new
+  		@history = current_user.histories.new
   	end
 
 	def create
-		# u = User.find_by_id(params[:user_id])
-		# @user= User.find(params[:user_id])
-    	user.histories.create(params.require(:history).permit(:spades, :hearts, :clubs, :diamonds))
-    	redirect_to user_history_index_path
+		# u = current_user.find_by_id(params[:current_user_id])
+		# @current_user= current_user.find(params[:current_user_id])
+    	@history= current_user.histories.new(history_params)
+
+      if @history.save
+        flash[:success]= "Your history was successfully created"
+        render action: :show
+      else
+        flash[:error]= "There was an error creating your history"
+        render action: :new
+      end
   	end
 
   def edit
-  	@history = History.find(params[:id])
+  	# @history = History.find(params[:id])
 
   end
 
@@ -29,7 +38,7 @@ def update
 	@history = History.find(params[:id])
 	if @history.update_attributes(history_params)
   		flash[:success] = "Saved history."
-  		redirect_to user_history_path
+  		redirect_to history_path
 	else
   		flash[:error] = "That history could not be saved."
   		render action: :edit
@@ -43,16 +52,18 @@ end
   	else
     		flash[:error] = "History could not be deleted."
   	end
-  	redirect_to user_history_index_path
+  	redirect_to history_index_path
   end
 
 
     private
+    def set_history
+      @history = current_user.histories.find(params[:id])
+    end
+
     def history_params
-    	params[:history].permit(:user_id, :updated_at)
+    	params.require(:history).permit(:user_id, :updated_at)
   	end
 
-  	def user
-  		@user= User.find(params[:user_id])
-  	end
+  	
 end
