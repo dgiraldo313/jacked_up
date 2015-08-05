@@ -30,16 +30,107 @@ h1{
 }
 
 
-.container{
-  width: 100%;
-  position: relative;
+/************
+    Input Boxes
+*************/
+
+input,
+textarea {
+  font-size: 1em;
+  color: black;
+  font-weight: 300; 
+  width: 80%;
+  margin: auto;
+  border: none;
+  height: auto;
+  padding: 15px;
+  outline: 0;
+  margin-bottom: 1.2em;
+  border-radius: .3em;
+  border-bottom: 3px solid rgba(0,0,0, 0.05);
+  background-color: #e8eeef;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+}
+form{
+  padding: 20px 24px;
+  background: #f4f7f8;
 }
 
-.main-content{
-  width: 80%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 30px;
+.content{
+  max-width: 500px;
+  margin: auto;
+}
+
+
+
+/************
+    NAV
+*************/
+div.nav{
+  background-color: lightgray;
+  
+
+}
+
+  div.nav #logout{
+    list-style-type: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    }
+
+    #logout a {
+     text-decoration: none;
+    }
+
+
+  div.nav #logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3em;
+    text-align: center;
+    margin: 5px 0;
+  }
+    
+    #logo a{
+      text-decoration: none;
+    }
+
+
+/**************
+  FLASH ALERTS
+  **************/
+
+div.alert{
+  padding:10px;
+  text-align: center;
+}
+
+div.flash.error{
+  background-color: red;
+  color: white;
+}
+
+div.flash.success {  
+  background-color: green;
+  color: white; 
+  }
+
+div.flash.notice {  
+  background-color: dodgerblue;
+  color: white; 
+  }
+
+
+.field_with_errors input{
+  outline: 2px solid red;
+  /*background-color: rgba(255, 0, 0, 0.4);*/
+  
+}
+
+#error-explanation{
+  color: red;
 }
 
 
