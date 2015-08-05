@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id]= @user.id
       flash[:notice] = "Thank you for signing up"
-      render action: :show
+      redirect_to workouts_path
     else
       # flash[:error] = "User could not be created"
       render action: :new
@@ -52,6 +52,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-  	params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  	params.require(:user).permit(:first_name, :last_name, :username, :email,  :password, :password_confirmation)
 	end
 end

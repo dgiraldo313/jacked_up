@@ -19,7 +19,8 @@ class ApplicationController < ActionController::Base
   	if current_user
   		true
   	else
-  		redirect_to new_user_session_path, notice: "You must be logged in to access that page."
+  		flash[:notice]= "You must be logged in to access that page."
+  		redirect_to :login
   	end
   end
 

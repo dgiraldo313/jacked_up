@@ -2,7 +2,7 @@
 
 <%= form_for(@workout) do |f| %>
   <% if @workout.errors.any? %>
-    <div>
+    <div id= "error-explanation">
       <h2><%= pluralize(@workout.errors.count, "error") %> prohibited this workouts from being saved:</h2>
 
       <ul>
@@ -13,23 +13,23 @@
     </div>
   <% end %>
 
-  <div >
+  <div class= "field">
     <%= f.label :spades %><br>
     <%= f.text_field :spades %>
   </div>
-  <div >
+  <div class= "field">
     <%= f.label :hearts %><br>
     <%= f.text_field :hearts %>
   </div>
-  <div >
+  <div class= "field">
     <%= f.label :clubs %><br>
     <%= f.text_field :clubs %>
   </div>
-  <div >
+  <div class= "field">
     <%= f.label :diamonds %><br>
     <%= f.text_field :diamonds %>
   </div>
-  <div >
+  <div class= "submit">
     <%= f.submit %>
   </div>
 

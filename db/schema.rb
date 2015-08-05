@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731200626) do
+ActiveRecord::Schema.define(version: 20150805030824) do
 
   create_table "histories", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -29,10 +29,12 @@ ActiveRecord::Schema.define(version: 20150731200626) do
     t.string   "last_name",            limit: 255
     t.string   "password_digest",      limit: 255
     t.string   "password_reset_token", limit: 255
+    t.string   "username",             limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["password_reset_token"], name: "index_users_on_password_reset_token", using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
   create_table "workouts", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
