@@ -39,7 +39,7 @@ textarea {
   font-size: 1em;
   color: black;
   font-weight: 300; 
-  width: 80%;
+  width: 390px;
   margin: auto;
   border: none;
   height: auto;
@@ -52,7 +52,10 @@ textarea {
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 }
 form{
-  padding: 20px 24px;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 40px;
   background: #f4f7f8;
 }
 
@@ -61,26 +64,44 @@ form{
   margin: auto;
 }
 
+input[type="submit"]{
+  display: inline-block;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05) inset;
+  box-shadow: 1px 2px 0 rgba(0,0,0,.1);
+  background-color: #e73838;
+  width: auto;
+
+}
+
+#other-options{
+  display: inline-block;
+  float: right;
+  padding-top: 5px;
+}
+
 
 
 /************
     NAV
 *************/
 div.nav{
-  background-color: lightgray;
-  
+    background-color: rgba(255, 255,255, .6);
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    margin-top: 20px;
 
 }
 
   div.nav #logout{
     list-style-type: none;
     position: absolute;
-    top: 30px;
+    top: 35px;
     right: 30px;
+    padding: 10px;
     }
 
-    #logout a {
-     text-decoration: none;
+    #logout a img {
+
     }
 
 
@@ -90,11 +111,13 @@ div.nav{
     margin-right: auto;
     font-size: 3em;
     text-align: center;
-    margin: 5px 0;
+    padding: 10px 0 0 0;
   }
     
     #logo a{
       text-decoration: none;
+      color: white;
+
     }
 
 
@@ -121,11 +144,14 @@ div.flash.notice {
   background-color: dodgerblue;
   color: white; 
   }
+.flash{
+  margin-top: -9px;
+}
 
 
 .field_with_errors input{
-  outline: 2px solid red;
-  /*background-color: rgba(255, 0, 0, 0.4);*/
+  outline: .8px solid red;
+  background-color: rgba(255, 0, 0, 0.3);
   
 }
 

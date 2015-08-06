@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   	if current_user
   		true
   	else
-  		flash[:notice]= "You must be logged in to access that page."
+  		flash[:notice]= 'You must be logged in to access that page.'
   		redirect_to :login
   	end
   end

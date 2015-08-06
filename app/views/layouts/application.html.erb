@@ -10,25 +10,19 @@
 	<div class="container">
 		<div class= "nav">
 			<div id= "logo"> <%= link_to "JackedUp", workouts_path %></div>
-
 			<% if logged_in? %>
-	        <div id= "logout"><%= link_to "Log Out", logout_path, method: :delete %></div>
-	      
-	        <% end %>
-		    
+	        <div id= "logout"><%= link_to image_tag("logout.png"),logout_path, method: :delete %>
+			</div>
+	        <%end%>
 		 </div>
-
-	  <% flash.each do |type, message| %>
-	  <div class= "alert flash <%= type %>">
-	        <%= message %>
-	  </div>
-	  <% end %>
-	  <div class= "content">
-
+	<div class="flash">
+		  <%flash.each do|type,message| -%>
+		<div class= "alert flash <%= type %>"><%= message %></div>
+		  <%end %>
+	</div>
+	<div class= "content">
 		<%= yield %>
-
-		
-	  </div>
+	</div>
 	</div>
 
 

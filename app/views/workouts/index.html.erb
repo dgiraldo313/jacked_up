@@ -1,5 +1,7 @@
 <div class="container">
-<table >
+<div class="baraja-deck">
+	<ul id="baraja-el" class="baraja-container">
+<!-- <table >
 	<thead>
 	<tr>
 		<th>Workout Id</th>
@@ -9,23 +11,36 @@
         <th><h1>&spades;:</h1></th>
         <th></th>
         </tr>
-    </thead>
+    </thead> -->
 	<% @workouts.each do |workout| %>
-	<tr>
+	<li>
 	
-		<td><%= workout.user_id %></td>
-		<td><%= workout.spades %></td>
-		<td><%= workout.clubs %></td>
-		<td><%= workout.hearts %></td>
-		<td><%= workout.diamonds %>
-		<td><%= link_to "Show", workout_path(workout) %>
+		<div><%= workout.user_id %></div>
+		<div><%= workout.spades %></div>
+		<div><%= workout.clubs %></div>
+		<div><%= workout.hearts %></div>
+		<div><%= workout.diamonds %></div>
+		<div><%= link_to "Show", workout_path(workout) %>
 		<%= link_to "Edit", edit_workout_path(workout) %>
-		<%= link_to "Delete", workout_path(workout), method: :delete, data: { confirm: "Are you sure?" }%></a></td>
+		<%= link_to "Delete", workout_path(workout), method: :delete, data: { confirm: "Are you sure?" }%></a></div>
 
-	</tr>
+	</li>
 	<% end %>
-</table>
+
 
 	<h1><%= link_to "New Workout", new_workout_path %>
 	</h1>
 </div>
+</ul>
+</div>
+
+ <%= javascript_tag do %>
+    var $el = $( '#baraja-el' ),
+	baraja = $el.baraja();
+
+		$( '.baraja-container' ).on( 'click', function( event ) {
+
+			baraja.next();		
+		} );
+			
+ <% end %>
