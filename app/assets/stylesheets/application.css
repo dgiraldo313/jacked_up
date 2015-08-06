@@ -11,10 +11,11 @@
  * file per style scope.
  *
  *= require normalize
+ *= require baraja
  *= require main
  *= require_self
- *= require baraja
  *= require custom
+ *= require workouts
  
  */
 

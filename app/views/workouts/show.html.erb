@@ -1,4 +1,4 @@
-<h1> Welcome <%= current_user.first_name %> ,  </h1>
+
 <% @Deck1= Deck.new %>
 <% @count= 1 %>
 <div class="baraja-deck">
@@ -8,7 +8,7 @@
 		<% suit= card.suit.downcase %>
 		<% rank= card.rank%>
 		<% value= card.value %>
-		<li id="next">
+		<li class="next">
 		
 			<%if suit == "spades" || suit == "clubs" %>
 				<div class="black-card">

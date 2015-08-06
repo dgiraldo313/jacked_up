@@ -1,6 +1,6 @@
-<div class="container">
-<div class="baraja-deck">
-	<ul id="baraja-el" class="baraja-container">
+
+<div class="">
+	<ul >
 <!-- <table >
 	<thead>
 	<tr>
@@ -13,34 +13,24 @@
         </tr>
     </thead> -->
 	<% @workouts.each do |workout| %>
-	<li>
-	
-		<div><%= workout.user_id %></div>
-		<div><%= workout.spades %></div>
-		<div><%= workout.clubs %></div>
-		<div><%= workout.hearts %></div>
-		<div><%= workout.diamonds %></div>
-		<div><%= link_to "Show", workout_path(workout) %>
-		<%= link_to "Edit", edit_workout_path(workout) %>
-		<%= link_to "Delete", workout_path(workout), method: :delete, data: { confirm: "Are you sure?" }%></a></div>
+	<li class="display-workouts-card card-display-grid">
+	  <div class="delete-workout"><%= link_to image_tag("delete.svg"), workout_path(workout), method: :delete, data: { confirm: "Are you sure?" }%></a></div>
+	  <div class="description-container">
+		<div class="spades">&spades;: <%= workout.spades %></div>
+		<div class="hearts">&hearts;: <%= workout.hearts %></div>
+		<div class="clubs">&clubs;: <%= workout.clubs %></div>
+		<div class="diamonds">&diams;: <%= workout.diamonds %></div>
+	</div>
+		<div class="start-workout"><%= link_to "START", workout_path(workout) %></div>
 
 	</li>
 	<% end %>
-
-
-	<h1><%= link_to "New Workout", new_workout_path %>
-	</h1>
-</div>
 </ul>
 </div>
+<div id="new-workout"><%= link_to image_tag("add.svg"), new_workout_path %>
+	</div>
 
- <%= javascript_tag do %>
-    var $el = $( '#baraja-el' ),
-	baraja = $el.baraja();
 
-		$( '.baraja-container' ).on( 'click', function( event ) {
 
-			baraja.next();		
-		} );
+
 			
- <% end %>
