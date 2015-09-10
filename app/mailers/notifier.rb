@@ -1,6 +1,6 @@
 class Notifier < ApplicationMailer
-	default_url_options[:host]= "localhost:3000"
-	default from: "from@example.com"
+	default_url_options[:host]= "jackedup-test.herokuapp.com"
+	default from: "no-reply@jackedup.com"
 
 	def password_reset(user)
 		@user = user
