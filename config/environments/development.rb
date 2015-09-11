@@ -43,10 +43,10 @@ Rails.application.configure do
   #mailgun configuration
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :port           => ENV['587'],
-    :address        => ENV['smtp.mailgun.org'],
-    :user_name      => ENV['postmaster@app00b0b9d027ec420980915a42cecf4335.mailgun.org'],
-    :password       => ENV['59e5f8a58bc2c36891846d8afe04a3cb'],
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
     :domain         => 'jackedup-test.herokuapp.com', #eg: 'yourappname.herokuapp.com'
     :authentication => :plain,
   }
