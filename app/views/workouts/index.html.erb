@@ -13,17 +13,19 @@
         </tr>
     </thead> -->
 	<% @workouts.each do |workout| %>
-	<li class="display-workouts-card card-display-grid">
-	  <div class="delete-workout"><%= link_to image_tag("delete.svg"), workout_path(workout), method: :delete, data: { confirm: "Are you sure?" }%></a></div>
-	  <div class="description-container">
-		<div class="spades">&spades;: <%= workout.spades %></div>
-		<div class="hearts">&hearts;: <%= workout.hearts %></div>
-		<div class="clubs">&clubs;: <%= workout.clubs %></div>
-		<div class="diamonds">&diams;: <%= workout.diamonds %></div>
-	</div>
-		<div class="start-workout"><%= link_to "START", workout_path(workout) %></div>
+	<div class='col-md-4 col-sm-6'>
+		<li class="display-workouts-card">
+		  <div class="delete-workout"><%= link_to image_tag("delete.svg"), workout_path(workout), method: :delete, data: { confirm: "Are you sure?" }%></a></div>
+		  <div class="description-container">
+			<div class="spades">&spades;: <%= workout.spades %></div>
+			<div class="hearts">&hearts;: <%= workout.hearts %></div>
+			<div class="clubs">&clubs;: <%= workout.clubs %></div>
+			<div class="diamonds">&diams;: <%= workout.diamonds %></div>
+		</div>
+			<div class="start-workout"><%= link_to "START", workout_path(workout) %></div>
 
-	</li>
+		</li>
+	</div>
 	<% end %>
 </ul>
 </div>

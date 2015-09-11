@@ -4,14 +4,13 @@ ul{
 .display-workouts-card{
 	font-family: Arial !important;
 	background: #e9e9e9;
-    /*width: 200px;*/
-    height: 310px;
-    margin: 30px;
+    width: 200px;
+    height: 300px;
+    margin: 20px auto;
     font-size: 2em;
     border-radius: 10px;
-    /*padding: 5px;*/
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
-    display: inline-block;
+    
 }
 
 .description-container{
@@ -56,9 +55,19 @@ ul{
 
 #new-workout img{
 	width: 100px;
-	display: block;
+    position: fixed;
+    display: block;
     margin: auto;
+    bottom: 10px;
+    right: 20px;
 }
+
+#new-workout img:hover{
+	width: 110px;
+	bottom: 5px;
+	right: 15px;
+}
+
 
 .spades, .clubs{
 	color: black;
@@ -72,11 +81,11 @@ ul{
 	Grid
 ********************/
 
-.card-display-grid{
+/*.card-display-grid{
 	width: 20.5%;
 	margin-right: 6.25%;
 	margin-left: 6.25%;
 
-}
+}*/
 
 

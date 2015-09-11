@@ -59,6 +59,15 @@ form{
   margin-bottom: 50px;
   padding: 40px;
   background: #f4f7f8;
+  box-sizing: content-box;
+  /*used to place form in the middle of the page*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 .content{
@@ -162,5 +171,6 @@ div.flash.notice {
 #error-explanation{
   color: red;
 }
+
 
 

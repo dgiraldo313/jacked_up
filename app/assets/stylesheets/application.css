@@ -11,11 +11,13 @@
  * file per style scope.
  *
  *= require normalize
+ *= require bootstrap-grid
  *= require baraja
  *= require main
  *= require_self
  *= require custom
  *= require workouts
+
  
  */
 
