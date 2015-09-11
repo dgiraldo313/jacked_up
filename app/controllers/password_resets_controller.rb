@@ -3,10 +3,14 @@ class PasswordResetsController < ApplicationController
 	end
 
 	def create
+		puts "Hello, logs 1!"
 		user= User.find_by(email: params[:email])
 		if user
+			puts "Hello, logs 2!"
 			user.generate_password_reset_token!
+			puts "Hello, logs 3!"
 			Notifier.password_reset(user).deliver
+			puts "Hello, logs 4!"
 			flash[:success] = "Password reset instructions sent! Please check your email."
 			redirect_to login_path
 		else
