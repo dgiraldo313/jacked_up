@@ -1,6 +1,12 @@
 ul{
 	padding: 0;
 }
+
+#welcome{
+	display: block;
+    font-size: 3em;
+    color: white;
+}
 .display-workouts-card{
 	font-family: Arial !important;
 	background: #e9e9e9;
@@ -10,6 +16,7 @@ ul{
     font-size: 2em;
     border-radius: 10px;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+    list-style: none;
     
 }
 
@@ -32,6 +39,7 @@ ul{
 }
 
 
+
 .start-workout a{
 	text-decoration: none;
 	font-size: .5em;
@@ -51,6 +59,12 @@ ul{
     padding: 5px 0 5px;
     /*height: 40px;*/
     border-radius: .3em;
+    transition: .2s;
+}
+
+.start-workout a:hover{
+	background-color: #4b9d13;
+	color: white;
 }
 
 #new-workout img{
@@ -78,14 +92,13 @@ ul{
 }
 
 /********************
-	Grid
+	Timer for show.html
 ********************/
 
-/*.card-display-grid{
-	width: 20.5%;
-	margin-right: 6.25%;
-	margin-left: 6.25%;
-
-}*/
+#controls-container{
+	background-color: red;
+    height: 500px;
+    width: 50%;
+}
 
 

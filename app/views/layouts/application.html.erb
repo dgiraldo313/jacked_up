@@ -11,7 +11,9 @@
 		<div class= "nav">
 			<div id= "logo"> <%= link_to "JackedUp", workouts_path %></div>
 			<% if logged_in? %>
-	        <div id= "logout"><%= link_to image_tag("logout.png"),logout_path, method: :delete %>
+			<div id="nav-options">
+				<div id= "home"><%= link_to "Home", workouts_path %></div>
+		        <div id= "logout"><%= link_to "Logout",logout_path, method: :delete%></div>
 			</div>
 	        <%end%>
 		 </div>

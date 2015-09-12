@@ -9,7 +9,7 @@
 
 
 .baraja-deck {
-	width: 200px;
+	width: 980px;
 	margin: 30px auto;
 	color: #aaa;
 }
@@ -46,6 +46,15 @@
 	user-select: none;
 }
 
+ul.baraja-container{
+	width: 400px;
+    height: 500px;
+    margin: 0 50px 50px;
+    position: relative;
+    float: right;
+    display: inline-block;
+}
+
 /*.baraja-deck li img {
 	display: block;
 	margin: 0 auto;
@@ -73,7 +82,7 @@
 
 	}
 	.center-items{
-		margin-top: 10%;
+		margin-top: 25%;
   		text-align: center;
 	}
 

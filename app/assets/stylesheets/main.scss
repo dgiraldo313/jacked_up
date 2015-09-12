@@ -1,6 +1,7 @@
 html{
 	background-image: url(image-path('black_pattern_2.jpg'));
 	background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 table {
@@ -61,13 +62,13 @@ form{
   background: #f4f7f8;
   box-sizing: content-box;
   /*used to place form in the middle of the page*/
-  position: absolute;
+  /*position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);*/
 }
 
 .content{
@@ -83,7 +84,12 @@ input[type="submit"]{
   min-width: 100px;
   width: auto;
   color: #e73838;
+  transition: .2s;
 
+}
+input[type="submit"]:hover{
+  background-color: #e73838;
+  color: white;
 }
 
 #other-options{
@@ -104,20 +110,48 @@ div.nav{
     margin-top: 20px;
 
 }
+  #nav-options{
+    width: 200px;
+    display: block;
+    margin: 10px auto 0;
+  }
 
-  div.nav #logout{
-    list-style-type: none;
-    position: absolute;
-    top: 35px;
-    right: 30px;
-    padding: 10px;
+  #nav-options a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 24px;
+  }
+  #nav-options a:hover{
+    color: black !important;
+    font-weight: bolder;
+  }
+
+  #logout, #home{
+    display: inline-block;
+    width: 99px;
+    padding: 10px 0;
+    transition: .2s;
+    border: 2px solid white;
     }
 
-    #logout a img {
+  #logout{
+    border-radius: 0 20px 20px 0;
+    border-left: 0px;
+    margin-left: -20px;
+  }
 
-    }
+  #home{
+    border-radius: 20px 0 0px 20px;
+    margin-right: -20px;
+    border-right: 0px;
+  }
 
+  #logout:hover,
+  #home:hover{
+    background-color: white;
+  }
 
+  
   div.nav #logo{
     display: block;
     margin-left: auto;
