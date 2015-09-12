@@ -101,4 +101,36 @@ ul{
     width: 50%;
 }
 
+@media screen and (max-width: 980px){
+	.content{
+		width: 90%;
+	}
+
+	ul.baraja-container{
+		width: 300px;
+		height: 400px;
+		margin: 0px 20px 20px;
+
+	}
+
+	.baraja-deck{
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 680px){
+	ul.baraja-container{
+		display: block;
+     	margin: auto; 
+    	float: none;
+
+	}
+	#controls-container{
+		display: block;
+    	clear: both;
+    	margin: auto;
+    	width: 60%;
+	}
+}
+
 
