@@ -96,9 +96,49 @@ ul{
 ********************/
 
 #controls-container{
-	background-color: red;
     height: 500px;
     width: 50%;
+    padding-top: 100px;
+}
+
+#controls-box{
+	height: 300px;
+    padding: 20px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+.control{
+	display: inline-block;
+	width: 32%;
+	text-align: center;
+	cursor: pointer;
+}
+
+#timer-container{
+	width: 300px;
+    display: block;
+    margin: auto;
+    padding-top: 40px;
+    text-align: center;
+    font-size: 4em;
+    font-weight: bolder;
+}
+
+#form-startstop{
+	width: auto;
+    background-color: transparent;
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#start-stop{
+	width: 100px;
+	display: block;
+	margin: auto;
 }
 
 @media screen and (max-width: 980px){
@@ -112,13 +152,16 @@ ul{
 		margin: 0px 20px 20px;
 
 	}
+	#controls-container{
+    	padding-top: 50px;
+	}
 
 	.baraja-deck{
 		width: auto;
 	}
 }
 
-@media screen and (max-width: 680px){
+@media screen and (max-width: 740px){
 	ul.baraja-container{
 		display: block;
      	margin: auto; 
@@ -129,8 +172,31 @@ ul{
 		display: block;
     	clear: both;
     	margin: auto;
-    	width: 60%;
+    	padding-top: 0px;
+    	width: 300px;
 	}
+	#controls-box{
+		height: 150px;
+    	padding: 10px;
+	}
+	#timer-container{
+		width: 200px;
+		padding-top: 0px;
+	}
+	#timer{
+		height: 50px;
+	}
+	#chronotime{
+		font-size: .8em;
+	}
+	#form-startstop{
+		padding-top: 15px;
+	}
+	
+	#start-stop{
+		width: 100px;
+	}
+
 }
 
 

@@ -1,19 +1,11 @@
 
 <div class="">
 	<ul >
-<!-- <table >
-	<thead>
-	<tr>
-		<th>Workout Id</th>
-		<th><h1 style="color:red"> &hearts;:</h1></th>
-        <th><h1>&clubs;:</h1></th>
-        <th><h1 style="color:red">&diams;: </h1></th>
-        <th><h1>&spades;:</h1></th>
-        <th></th>
-        </tr>
-    </thead> -->
     <% if @workouts.blank? %> <!-- checking to see if user has any workouts -->
-    	<div id="no-workouts"> You have no workouts </div> <!-- fix this -->
+    	<div id="no-workouts"> 
+    		<h1>You have no workouts</h1> <!-- fix this -->
+    		<div id="new-workout"><%= link_to image_tag("add.svg"), new_workout_path %></div>
+    	</div>
    	<% else %>
 		<% @workouts.each do |workout| %>
 		<div class='col-md-4 col-sm-6'>
@@ -30,11 +22,12 @@
 			</li>
 		</div>
 		<% end %>
+	<div id="new-workout"><%= link_to image_tag("add.svg"), new_workout_path %>
+	</div>
 	<% end %> <!-- end if statement -->
 </ul>
 </div>
-<div id="new-workout"><%= link_to image_tag("add.svg"), new_workout_path %>
-	</div>
+
 
 
 

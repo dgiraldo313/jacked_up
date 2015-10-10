@@ -55,15 +55,28 @@
 	</ul>
 </div>
 <div id="controls-container">
-	<div id="timer-container">
-		<div id="timer">
-		</div>
-		<div id="timer-controls">
-			<div class="control">
+	<div id="controls-box">
+		<div id="timer-container">
+			<div id="timer">
+				<div id="chronotime">00:00</div>
 			</div>
 		</div>
-	<div 
-<div>
+			<div id="timer-controls">
+				<div class="control">
+					<div id="prev">Previous</div>
+				</div>
+				<div class="control">
+					<form name="chronoForm" id="form-startstop"/>
+		    			<input type="button" name="startstop" value="start!" onClick="chronoStart()" id="start-stop">
+					</form>
+				</div>
+				<div class="control">
+					<div id="next">Next</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
  
   
@@ -73,7 +86,18 @@
 
 		$( '.baraja-container' ).on( 'click', function( event ) {
 
-			baraja.next();		
+			baraja.next();	
+
+		} );
+		$( '#next' ).on( 'click', function( event ) {
+
+			baraja.next();	
+
+		} );
+		$( '#prev' ).on( 'click', function( event ) {
+
+			baraja.previous();	
+
 		} );
 			
  <% end %>
