@@ -1,28 +1,21 @@
-== README
+== JACKED UP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a pet project I created in order to learn more about Ruby and the Rails framework. I wanted to re-create one of my favorite IOS apps, which is an app called Cards WOD. The purpose of this app is to help you perform a full body workout with the help of a deck of cards.
+    == Specs of the Workout
+       1. Each of the four suits in a deck of cards represents a different exercise, and the card value equals the number of reps.
+       2. Once you start the workout, you will be presented with a playing card. You are to perform the exercise you preselected for the specific suit and the number of reps depend on the value of the card.
+       3. When you finish the reps, you will flip the card and be presented with a new one.
+       4. Workout will be done after you have flipped through all 52 cards.
+       
+I wanted to practice working with a full MVC framework in order to create a CRUD application, which would allow me to learn the integration of Web Applications using both back and front end techonologies.
+    == Technologies Used
+      = Ruby on Rails
+      = HTML
+      = CSS 
+      = JavaScript (jQuery)
+      = Also integrated Mail Gun for password recovery
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+
+
